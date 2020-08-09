@@ -27,7 +27,7 @@ SECRET_KEY = '$^7+jlyd+$q&r(^&%97exms%pkwg8a04)qhs&r&eaj7-rv@&f&'
 DEBUG = True
 
 
-django_heroku.settings(locals())
+
 
 
 
@@ -141,3 +141,4 @@ LOGIN_URL = 'users:login'
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='home'
 
+django_heroku.settings(locals())
