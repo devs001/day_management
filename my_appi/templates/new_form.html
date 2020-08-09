@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new_forms</title>
+</head>
+<body>
+{% block content %}
+</br>
+
+<form action="{% url 'new_forms' %}" method="post" class="form" enctype="multipart/form-data">
+    {% bootstrap_form form %}
+    {% csrf_token %}
+    <button class="btn btn-primary" name="submit"> add topic</button>
+</form>
+{% endblock content %}
+
+</body>
+</html>

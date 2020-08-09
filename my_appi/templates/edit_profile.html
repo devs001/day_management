@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit_profile</title>
+</head>
+<body>
+{% block page_header %}
+
+<form class="form" action="{% url 'users:edit_profile' id=use.id %}" method="post">
+    {% csrf_token %}
+    {{  form }}
+    {{  Pform }}
+    <button class="btn btn-primary" type="submit" >
+
+    </button>
+</form>
+
+{% endblock page_header %}
+</body>
+</html>

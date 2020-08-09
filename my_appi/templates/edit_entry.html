@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+<p>
+    {% block content %}
+    <form  class='form' action="{% url 'edits_entry' entry_id=entry.id  %}" method = 'post' enctype="multipart/form-data">
+    {% bootstrap_form form %}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary"  > edit entry</button>
+</form>
+{% endblock content %}
+</p>

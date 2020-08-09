@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<form action="{% url 'neo_entry' topic.id %}" method="post" class="form" enctype="multipart/form-data">
+
+{% bootstrap_form form %}
+    {% csrf_token %}
+{% buttons %}
+<button type="submit" class="btn btn-primary"> add entry</button>
+    {% endbuttons %}
+ {% endblock content %}
+</form>

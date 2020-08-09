@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profile</title>
+</head>
+<body>
+{% block content %}
+<div class="card mb-6"></div>
+<div class="card mb-6">
+    <div class="card-header">
+        <h2 class="ep">name- {{ user.username }}</h2>
+        <h2 style="text-align:right" class="ep"><a href="{% url 'users:edit_profile' id=user.id %}"> change it</a></h2>
+        <img src=" {{ user.profile.profile_pic.url }} " class="rounded-circle" width="200" height="200">
+    </div>
+    <div class="card-body">
+        <h4 class="ep">Bio- {{ user.profile.bio }}</h4>
+        <h4 class="ep">Name- {{ user.first_name }} {{ user.last_name }}</h4>
+        <h4 class="ep">Email- {{ user.email }}</h4>
+        <a href="{{ user.profile.website_link }}" >
+                <h3> website link {{ user.profile.website_link }}</h3>
+            </a>
+        <a href="{{ user.profile.twitter_link }}" >
+                <h3 class="ep"> twitter {{ user.profile.twitter_link }}</h3>
+            </a>
+        <a href="{{ user.profile.facebook_link }}" >
+                <h3 class="ep"> facebook {{ user.profile.facebook_link }}</h3>
+            </a>
+        <h2 class="es">number of topics- {{len_t}}</h2>
+        <h2 class="es"> number of Entry - {{ len_e }}</h2>
+    </div>
+</div>
+{% endblock content %}
+
+</body>
+</html>

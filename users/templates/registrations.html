@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+<body>
+    {% block page_header %}
+<form action="{% url 'users:registrations' %}" method="post" class="form" >
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_form Eform %}
+
+    {% buttons %}
+    <button name="submit" class="btn btn-primary"> SignUp here</button>
+    <input type="hidden" name="next" value = "{% url 'intex' %}"/>
+    {% endbuttons %}
+</form>
+{% endblock page_header %}
+</body>

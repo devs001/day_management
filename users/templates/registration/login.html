@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+<head>
+
+</head>
+
+<body>
+
+    {% block content %}
+<form action="{% url 'users:login' %}" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button name="submit" class="btn btn-primary">Log in</button>
+    {% endbuttons %}
+    <input type="hidden" name="next" value="{% url 'intex' %}" />
+</form>
+{% endblock content %}
+</body>

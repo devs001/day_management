@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block page_header %}
+
+    <h1>Topics</h1>
+    {% endblock page_header %}
+
+    {% block content %}
+<div>
+    {%for topics in topic %}
+    <div class="jumbotron">
+        <h3>  click to entry </h3>
+        <div class="display-4">
+        <a href = "{%url 'topic' topics.id %}"> {{topic.id}} {{topics}}</a> </div>
+        </div>
+    <div>
+        <h3>  date of creation {{ topics.date_added }} </h3>
+    </div>
+    {% empty %}
+    <h1> none click to add </h1>
+    {% endfor %}
+</div>
+<a href="{% url 'new_forms' %} "><img src="https://img.icons8.com/cotton/64/000000/plus--v3.png"/> </a></h3>
+{% endblock content %}
+
+

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<p> {% for i in data %}
+       <li> {{ i }} </li>
+    {% empty %}
+    {% endfor %}
+    </p>
+
+{% endblock content %}
